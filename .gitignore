@@ -13,9 +13,7 @@ Backend/__pycache__/
 Backend/*.pyc
 Backend/*.pyo
 Backend/*.pyd
-Backend/env/
 Backend/venv/
-Backend/.env
 
 ############################
 # Common Ignored Files
