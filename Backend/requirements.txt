@@ -1,1 +1,6 @@
- For run this project -- uvicorn main:app --reload
+fastapi
+uvicorn[standard]
+motor
+python-dotenv
+pydantic
+gunicorn
