@@ -1,0 +1,25 @@
+############################
+# Frontend (Node / React / Vite)
+############################
+Frontend/node_modules/
+Frontend/dist/
+Frontend/.env
+Frontend/.env.local
+
+############################
+# Backend (Python / FastAPI / Flask)
+############################
+Backend/__pycache__/
+Backend/*.pyc
+Backend/*.pyo
+Backend/*.pyd
+Backend/env/
+Backend/venv/
+Backend/.env
+
+############################
+# Common Ignored Files
+############################
+.DS_Store
+*.log
+.env
