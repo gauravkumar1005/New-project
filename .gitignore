@@ -20,4 +20,4 @@ Backend/venv/
 ############################
 .DS_Store
 *.log
-.env
+
