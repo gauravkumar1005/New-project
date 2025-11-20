@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 // Helper
 const formatDateISO = (d) => d.toISOString().slice(0, 10);
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 const Calendar = ({ year, month, events, onDateClick }) => {
   const firstDay = new Date(year, month, 1);
@@ -121,7 +122,7 @@ const EditAgent = () => {
   useEffect(() => {
     const loadAgent = async () => {
       try {
-        const res = await fetch(`http://localhost:8000/agents/${id}`);
+        const res = await fetch(`${BACKEND_URL}/agents/${id}`);
         const data = await res.json();
 
         setName(data.name);
@@ -167,7 +168,7 @@ const EditAgent = () => {
     };
 
     try {
-      await fetch(`http://localhost:8000/agents/${id}`, {
+      await fetch(`${BACKEND_URL}/agents/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

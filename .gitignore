@@ -3,8 +3,7 @@
 ############################
 Frontend/node_modules/
 Frontend/dist/
-Frontend/.env
-Frontend/.env.local
+
 
 ############################
 # Backend (Python / FastAPI / Flask)

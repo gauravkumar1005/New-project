@@ -3,18 +3,18 @@ import { useNavigate } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 import axios from "axios";
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 
 const MyAgents = () => {
   const navigate = useNavigate();
   const [agents, setAgents] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const API_URL = "http://localhost:8000/agents";
-
   // Fetch All Agents
   const loadAgents = async () => {
     try {
-      const response = await axios.get(`${API_URL}/`);
+      const response = await axios.get(`${BACKEND_URL}/agents/`);
       setAgents(response.data);
     } catch (error) {
       console.error("Error loading agents:", error);
@@ -32,7 +32,7 @@ const MyAgents = () => {
     if (!confirm("Are you sure you want to delete this agent?")) return;
 
     try {
-      await axios.delete(`${API_URL}/${id}`);
+      await axios.delete(`${BACKEND_URL}/agents/${id}`);
       setAgents(agents.filter((a) => a._id !== id));
     } catch (error) {
       console.error("Error deleting agent:", error);
